@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Urbanist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-bg: #141414;
+  --color-surface: #1c1c1c;
+  --color-text: #f3f0e8;
+  --color-muted: #9a958c;
+  --color-accent: #e8a07a;
+}
+
+body {
+  @apply bg-bg text-text antialiased;
+}
