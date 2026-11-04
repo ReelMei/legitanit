@@ -23,7 +23,7 @@ export default function Philosophy() {
     >
       {/* Intro: image + text */}
       <div className="grid items-start gap-10 md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] md:gap-16">
-        <div className="relative aspect-[4/4.6] overflow-hidden bg-surface">
+        <div className="relative aspect-[4/4.6] rounded-2xl overflow-hidden bg-surface">
           <img
             src={workspace}
             alt=""

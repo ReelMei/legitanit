@@ -1,4 +1,7 @@
 import { useRef, useState } from "react";
+import video from '../assets/legit.mov'
+import thumb from '../assets/thumbnail.png'
+import { FaPlay } from "react-icons/fa";
 
 const formatTime = (s = 0) => {
   const m = Math.floor(s / 60);
@@ -74,13 +77,13 @@ export default function Hero() {
       <div
         ref={frameRef}
         onClick={togglePlay}
-        className="relative mt-12 aspect-[16/9] w-full cursor-pointer overflow-hidden bg-surface md:mt-16 md:aspect-[2.5/1]"
+        className="relative mt-12 aspect-video w-full cursor-pointer overflow-hidden bg-surface md:mt-16 md:aspect-2.5/1"
       >
         <video
           ref={videoRef}
           className="h-full w-full object-cover"
-          src="/videos/reel.mp4"
-          poster="/images/reel-poster.jpg"
+          src={video}
+          // poster={thumb}
           playsInline
           preload="metadata"
           onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
@@ -91,28 +94,19 @@ export default function Hero() {
         {/* Bottom gradient for legibility */}
         <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-black/20" />
 
-        {/* Top-left label */}
-        <div className="absolute left-4 top-4 flex items-center gap-2 bg-black/60 px-3 py-2 font-mono text-[10px] uppercase tracking-[0.12em] backdrop-blur-sm md:left-6 md:top-6">
-          <span className="h-1.5 w-1.5 bg-accent" />
+       
+        <div className="absolute left-4 top-4 rounded-2xl flex items-center gap-2 bg-black/60 px-3 py-2 font-mono text-[10px] uppercase tracking-[0.12em] backdrop-blur-sm md:left-6 md:top-6">
+          <span className="h-1.5 w-1.5 bg-accent rounded-full" />
           The art of the cut / Sample reel
         </div>
 
-        {/* Center play button */}
+        
         {!playing && (
           <button
             aria-label="Play reel"
             className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-text/80 backdrop-blur-[2px] transition hover:scale-105 hover:bg-white/10"
           >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinejoin="round"
-              className="ml-0.5 h-5 w-5"
-            >
-              <path d="M8 5.5v13l10-6.5-10-6.5z" />
-            </svg>
+            <FaPlay />
           </button>
         )}
 
@@ -124,27 +118,18 @@ export default function Hero() {
           </p>
         </div>
 
-        {/* Bottom-right controls */}
+       
         <div className="absolute bottom-4 right-4 flex items-center gap-4 font-mono text-[11px] md:bottom-6 md:right-6">
           <span>
             {formatTime(current)} / {formatTime(duration || 84)}
           </span>
           <button onClick={goFullscreen} aria-label="Fullscreen">
-            <svg
-              viewBox="0 0 16 16"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.3"
-              strokeLinecap="round"
-              className="h-4 w-4"
-            >
-              <path d="M2 6V2h4M10 2h4v4M14 10v4h-4M6 14H2v-4" />
-            </svg>
+           
           </button>
         </div>
       </div>
 
-      {/* Footer strip */}
+      
       <div className="mt-5 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.12em] text-muted">
         <span>Narrative instinct. Frame-by-frame precision.</span>
         <span className="hidden sm:inline">Scroll to discover ↓</span>

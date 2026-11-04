@@ -1,38 +1,55 @@
+import { useRef } from "react";
 import { Link } from "react-router-dom";
+import { GoArrowUpRight } from "react-icons/go";
 
 export default function ProjectCard({ project, index }) {
   const number = String(index + 1).padStart(2, "0");
+  const videoRef = useRef(null);
+
+  const play = () => videoRef.current?.play().catch(() => {});
+
+  const stop = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.pause();
+    v.currentTime = 0;
+  };
 
   return (
-    <Link to={`/work/${project.slug}`} className="group block">
-      {/* Thumbnail */}
+    <Link
+      to={`/work/${project.slug}`}
+      onMouseEnter={play}
+      onMouseLeave={stop}
+      className="group block"
+    >
+     
       <div className="relative aspect-4/3 overflow-hidden bg-surface">
         <img
           src={project.thumbnail}
           alt={project.title}
           loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          className="h-full w-full object-cover"
         />
 
-        {/* Duration chip */}
+       
+        <video
+          ref={videoRef}
+          src={project.video}
+          muted
+          loop
+          playsInline
+          preload="none"
+          className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+        />
+
+      
         <span className="absolute bottom-4 left-4 bg-black/70 px-2.5 py-1.5 font-mono text-[10px] tracking-[0.08em] backdrop-blur-sm">
           {project.duration}
         </span>
 
         {/* Arrow button */}
         <span className="absolute bottom-4 right-4 flex h-9 w-9 items-center justify-center rounded-full bg-text text-bg transition-colors group-hover:bg-accent">
-          <svg
-            viewBox="0 0 16 16"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-            aria-hidden="true"
-          >
-            <path d="M4 12L12 4M5.5 4H12v6.5" />
-          </svg>
+          <GoArrowUpRight className="h-4 w-4" />
         </span>
       </div>
 
