@@ -23,7 +23,7 @@ export default function ProjectCard({ project, index }) {
       className="group block"
     >
      
-      <div className="relative aspect-4/3 overflow-hidden bg-surface">
+      <div className="relative aspect-4/3 overflow-hidden bg-surface rounded-2xl">
         <img
           src={project.thumbnail}
           alt={project.title}
@@ -47,13 +47,13 @@ export default function ProjectCard({ project, index }) {
           {project.duration}
         </span>
 
-        {/* Arrow button */}
+        
         <span className="absolute bottom-4 right-4 flex h-9 w-9 items-center justify-center rounded-full bg-text text-bg transition-colors group-hover:bg-accent">
           <GoArrowUpRight className="h-4 w-4" />
         </span>
       </div>
 
-      {/* Category + index */}
+    
       <div className="mt-5 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.12em]">
         <span className="text-accent">{project.category}</span>
         <span className="text-muted">Example {number}</span>

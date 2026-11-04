@@ -58,7 +58,7 @@ export default function Philosophy() {
           </p>
 
           <p className="mt-3 font-mono text-[9px] uppercase tracking-widest text-muted/60">
-            Sample bio — replace with your story
+           Every video has a story worth telling, and I'm here to bring those stories to life. I'm a passionate video editor who turns raw footage into engaging visuals, blending creativity, rhythm, and storytelling to create videos that capture attention and leave a lasting impression.
           </p>
 
           <p className="mt-6 flex items-center gap-3 text-sm text-accent">

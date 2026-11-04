@@ -15,13 +15,10 @@ export default function ProjectGrid() {
         <h2 className="text-4xl font-normal tracking-tight md:text-6xl">
           Different stories. Same intent.
         </h2>
-        <p className="max-w-55 text-xs leading-relaxed text-muted">
-          A curated set of portfolio examples. Replace with your own films &amp;
-          credits.
-        </p>
+        
       </div>
 
-      <div className="mt-12 grid gap-12 md:grid-cols-3 md:gap-6">
+      <div className="mt-12 grid gap-12 md:grid-cols-3 md:gap-6 ">
         {projects.map((p, i) => (
           <ProjectCard key={p.slug} project={p} index={i} />
         ))}
