@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import video from '../assets/legit.mov'
 import thumb from '../assets/thumbnail.png'
 import { FaPlay } from "react-icons/fa";
+import { FaLongArrowAltDown } from "react-icons/fa";
 
 const formatTime = (s = 0) => {
   const m = Math.floor(s / 60);
@@ -37,7 +38,7 @@ export default function Hero() {
     <section className="mx-auto max-w-7xl px-6 pb-8 pt-28 md:px-10 md:pt-32">
       {/* Top: headline + intro */}
       <p className="font-mono text-[11px] uppercase tracking-[0.15em] text-accent">
-        Independent video editor &amp; visual storyteller
+        Independent video editor & visual storyteller
       </p>
 
       <div className="mt-6 grid items-center gap-10 md:grid-cols-2">
@@ -54,21 +55,11 @@ export default function Hero() {
 
           <a
             href="#work"
-            className="group mt-8 inline-flex items-center gap-6 rounded-full bg-accent px-6 py-3.5 text-sm font-medium text-bg transition hover:brightness-110"
+            className="group mt-8 inline-flex items-center gap-6 rounded-full bg-black px-6 py-3.5 text-sm font-medium text-bg transition hover:brightness-110"
           >
             Explore the work
-            <svg
-              viewBox="0 0 16 16"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-4 w-4 transition-transform group-hover:translate-y-0.5"
-              aria-hidden="true"
-            >
-              <path d="M8 3v10M4 9l4 4 4-4" />
-            </svg>
+            <FaLongArrowAltDown />
+           
           </a>
         </div>
       </div>
