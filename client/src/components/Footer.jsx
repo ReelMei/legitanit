@@ -1,6 +1,6 @@
 import { FiArrowUpRight, FiArrowUp } from "react-icons/fi";
 
-const EMAIL = "efeose13@gmail.com";
+const EMAIL = "workwithlegitanitt@gmail.com";
 
 const socials = [
   { label: "youtube", href: "https://youtube.com/@legitanit?si=5w2vXzkovqRQcZG8" },
@@ -71,7 +71,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-14 grid gap-4 border-t border-white/10 py-6 font-mono text-[10px] uppercase tracking-[0.12em] text-muted md:grid-cols-3 md:items-center">
-          <span>© {new Date().getFullYear()} Legitanit. Crafted frame by frame.</span>
+          <span>© {new Date().getFullYear()} Legitanit. Crafted with Love, By Enzo.</span>
 
           <span className="normal-case tracking-normal md:text-center">
            
